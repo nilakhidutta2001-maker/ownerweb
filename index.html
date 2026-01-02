@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Vision</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Page 1 -->
+  <section id="page1" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+    <!-- Luxury Background -->
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-30"></div>
+
+    <div class="relative z-10">
+      <h1 class="text-5xl md:text-6xl font-bold tracking-wide mb-6">To a Future Legend</h1>
+      <p class="max-w-2xl text-lg md:text-xl text-gray-300 mb-10">
+        A small wish for a successful man — may your vision stay sharp, your courage unshaken, and your ambition limitless.
+        <br/><br/>– From your friend, <span class="font-semibold">Koustov</span>
+      </p>
+      <a href="#page2" class="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition">
+        Continue
+      </a>
+    </div>
+  </section>
+
+  <!-- Page 2 -->
+  <section id="page2" class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-gray-900 via-black to-gray-800 relative overflow-hidden">
+
+    <!-- Decorative Background -->
+    <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
+
+    <div class="relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-10">Mindset of a Business Leader</h2>
+
+      <div class="space-y-8 max-w-3xl mx-auto">
+        <p class="text-xl italic">“Success in business is not about luck — it’s about vision, discipline, and the courage to act when others hesitate.”</p>
+        <p class="text-xl italic">“Markets reward patience, preparation, and belief in your own long-term game.”</p>
+      </div>
+
+      <button onclick="showBMW()" class="mt-12 px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition">
+        See Portfolio
+      </button>
+    </div>
+  </section>
+
+  <!-- BMW Transition -->
+  <section id="bmw" class="fixed inset-0 hidden flex items-center justify-center bg-black z-50 overflow-hidden">
+    <!-- BMW Logo Split Effect -->
+    <div id="bmwContainer" class="relative w-48 h-48">
+      <img id="bmwFull" src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" class="absolute inset-0 w-full h-full" />
+      <img id="bmwLeft" src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" class="absolute inset-0 w-full h-full clip-left" />
+      <img id="bmwRight" src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" class="absolute inset-0 w-full h-full clip-right" />
+    </div>
+
+    <!-- Engine Sound -->
+    <audio id="engineSound" src="https://assets.mixkit.co/sfx/preview/mixkit-car-engine-start-1566.mp3"></audio>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop src="https://assets.mixkit.co/music/preview/mixkit-driving-ambition-32.mp3"></audio>
+
+    <!-- Music Toggle -->
+    <button id="musicBtn" class="absolute bottom-6 right-6 px-4 py-2 border border-white text-white rounded-full text-sm">
+      🔊 Music On
+    </button>
+  </section>
+
+  <!-- Page 3 -->
+  <section id="page3" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden bg-black">
+
+    <!-- Luxury Car Background -->
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1617814076668-8dfc4d77a1f3?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-25"></div>
+
+    <div class="relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-8">A Message for the Journey</h2>
+
+      <p class="max-w-3xl text-lg md:text-xl text-gray-300 leading-relaxed">
+        <span class="font-semibold">Bhaswat Koushik Saikia</span>, this journey is built on a 
+        shared dream that is still takinThe belief and vision you carry today are seeds for something powerful tomorrow.
+        Every step forward is guided by trust, patience, and the courage to imagine more.
+        <br/><br/>
+        This future project holds our collective hopes, hard work, and an unspoken bond of belief.
+        And when success finally stands in front of us, we’ll look at each other, smile, and say —
+        <span class="font-semibold">it was damn hard to make, but we did it, broooo.</span>
+        <br/><br/>
+        <span class="italic">– Small wishes from your friend, Koustov</span>
+      </p>
+    </div>
+    </section>
+
+  <script>
+    function showBMW() {
+      const bmw = document.getElementById('bmw');
+      bmw.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.location.hash = '#page3';
+        bmw.classList.add('hidden');
+      }, 2000);
+    }
+  </script>
+  <script>
+    function showBMW() {
+      const bmw = document.getElementById('bmw');
+      const left = document.getElementById('bmwLeft');
+      const right = document.getElementById('bmwRight');
+      const engine = document.getElementById('engineSound');
+      const music = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicBtn');
+
+      bmw.classList.remove('hidden');
+      engine.play();
+      music.play();
+
+      setTimeout(() => {
+        left.style.transform = 'translateX(-150%)';
+        right.style.transform = 'translateX(-150%)';
+      }, 300);
+
+      setTimeout(() => {
+        window.location.hash = '#page3';
+        bmw.classList.add('hidden');
+      }, 2500);
+
+      btn.onclick = () => {
+        if (music.paused) {
+          music.play();
+          btn.innerText = '🔊 Music On';
+        } else {
+          music.pause();
+          btn.innerText = '🔇 Music Off';
+        }
+      };
+    }
+  </script>
+  <style>
+    .clip-left { clip-path: inset(0 50% 0 0); }
+    .clip-right { clip-path: inset(0 0 0 50%); }
+    .split-left { transform: translateX(-120%); transition: 1s ease; }
+    .split-right { transform: translateX(120%); transition: 1s ease; }
+
+    .typing::after {
+      content: '|';
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
+
+  <script>
+    function showBMW() {
+      const bmw = document.getElementById('bmw');
+      const left = document.getElementById('bmwLeft');
+      const right = document.getElementById('bmwRight');
+      const engine = document.getElementById('engineSound');
+      const music = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicBtn');
+
+      bmw.classList.remove('hidden');
+      engine.play();
+      music.play();
+
+      setTimeout(() => {
+        left.classList.add('split-left');
+        right.classList.add('split-right');
+      }, 400);
+
+      setTimeout(() => {
+        window.location.hash = '#page3';
+        bmw.classList.add('hidden');
+        startTyping();
+      }, 2500);
+
+      btn.onclick = () => {
+        if (music.paused) {
+          music.play(kosandra);
+          btn.innerText = '🔊 Music On';
+        } else {
+          music.pause();
+          btn.innerText = '🔇 Music Off';
+        }
+      };
+    }
+
+    function startTyping() {
+      const text = document.querySelector('#page3 p');
+      const content = text.innerText;
+      text.innerText = '';
+      let i = 0;
+
+      const interval = setInterval(() => {
+        text.innerText += content.charAt(i);
+        i++;
+        if (i >= content.length) clearInterval(interval);
+      }, 30);
+    }
+  </script>
+</body>
+</html>
